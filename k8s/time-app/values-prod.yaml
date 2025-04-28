@@ -1,0 +1,19 @@
+image:
+  repository: g3nd4/python-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 5000
+  targetPort: 5000
+
+containerPort: 5000
+
+replicaCount: 7
+
+secrets:
+  lab13_secret: "lab13-prod-secret"
+
+statefulSet:
+  serviceName: "time-app-headless-service"
